@@ -13,9 +13,9 @@ configViewEngine(app);
 
 app.use("/", webRoutes);
 
-connection.query("select * from Users u", function (err, results, fields) {
-  console.log(results); // results contains rows returned by server
-});
+// connection.query("select * from Users u", function (err, results, fields) {
+//   console.log(results); // results contains rows returned by server
+// });
 
 app.listen(port, hostname, () => {
   console.log(`Example app listening on port ${port}`);
