@@ -8,4 +8,9 @@ const getFriend = (req, res) => {
   res.render("sample.ejs");
 };
 
-module.exports = { getHomePage, getFriend };
+const postCreateUser = (req, res) => {
+  console.log(req.body);
+  res.send("alo");
+};
+
+module.exports = { getHomePage, getFriend, postCreateUser };
