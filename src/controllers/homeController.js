@@ -10,7 +10,19 @@ const getFriend = (req, res) => {
 
 const postCreateUser = (req, res) => {
   console.log(req.body);
-  res.send("alo");
+  let email = req.body.email;
+  let name = req.body.myname;
+  let city = req.body.city;
+
+  connection.query(
+    `INSERT INTO Users (email, name, city)
+     VALUES (?, ?, ?)`,
+    [email, name, city],
+    function (err, results) {
+      console.log(results);
+      res.send("Created user succeed");
+    }
+  );
 };
 
 module.exports = { getHomePage, getFriend, postCreateUser };
